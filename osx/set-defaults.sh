@@ -81,3 +81,16 @@ defaults write com.apple.dock launchanim -bool false
  
 # [HIDDEN] Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+###############################################################################
+# System Preferences > Mission Control                                        #
+###############################################################################
+ 
+# Show Dashboard as a space
+defaults write com.apple.dock dashboard-in-overlay -bool true
+ 
+# [HIDDEN] Mission control animation
+defaults write com.apple.dock expose-animation-duration -float 0
+ 
+# [HIDDEN] Disable dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean true
