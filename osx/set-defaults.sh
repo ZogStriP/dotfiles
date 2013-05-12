@@ -389,3 +389,14 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
  
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+###############################################################################
+# Calculator                                                                  #
+###############################################################################
+ 
+# View mode (`Basic`, `Scientific`, `Programmer`)
+defaults write com.apple.calculator ViewDefaultsKey -string "Scientific"
+ 
+# Show Thousands Separator
+defaults write com.apple.calculator SeparatorsDefaultsKey -bool true
+ 
