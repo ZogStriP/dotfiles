@@ -212,3 +212,24 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow 'showInputMenu' -
 # Show password hints
 sudo defaults write /Library/Preferences/com.apple.loginwindow 'RetriesUntilHint' -int 0
 
+###############################################################################
+# System Preferences > Date & Time                                            #
+###############################################################################
+ 
+### Time Zone
+ 
+# Set the timezone; see `systemsetup -listtimezones` for other values
+systemsetup -settimezone "Europe/Paris" > /dev/null
+ 
+### Clock
+ 
+# Date format
+defaults write com.apple.menuextra.clock 'DateFormat' -string 'EEE MMM d   h:mm:ss a'
+ 
+###############################################################################
+# System Preferences > Software Update                                        #
+###############################################################################
+ 
+# [HIDDEN] Check for software updates daily, not just once per week
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
