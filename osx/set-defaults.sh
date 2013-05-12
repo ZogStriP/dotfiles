@@ -233,3 +233,64 @@ defaults write com.apple.menuextra.clock 'DateFormat' -string 'EEE MMM d   h:mm:
 # [HIDDEN] Check for software updates daily, not just once per week
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+###############################################################################
+# Misc.                                                                       #
+###############################################################################
+ 
+# Disable window animations
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+ 
+# Window resize speed for Cocoa applications
+defaults write -g NSWindowResizeTime -float .001
+ 
+# Expand save panel by default
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+ 
+# Expand print panel by default
+defaults write -g PMPrintingExpandedStateForPrint -bool true
+ 
+# Disable "Reopen windows when logging back in"
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+ 
+# Disable auto-correct
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+ 
+# Disable system-wide resume
+defaults write -g NSQuitAlwaysKeepsWindows -bool false
+ 
+# Enable subpixel font rendering on non-Apple LCDs
+defaults write -g AppleFontSmoothing -int 2
+ 
+# Disable crash reporter
+defaults write com.apple.CrashReporter DialogType -string "none"
+ 
+# Disable the "Are you sure you want to open this application?" dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+ 
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+ 
+# Show remaining battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+ 
+# Enable Verbose boot
+sudo nvram boot-args="-v"
+ 
+# Show the ~/Library directory
+chflags nohidden ~/Library
+ 
+# Disable Hibernation
+sudo pmset -a hibernatemode 0
+sudo rm /var/vm/sleepimage
+ 
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+ 
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+ 
+# Use scroll gesture with the Ctrl (^) modifier key to zoom
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+
