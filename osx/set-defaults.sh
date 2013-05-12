@@ -183,3 +183,32 @@ defaults write com.apple.dock showAppExposeGestureEnabled -bool true
  
 # Launchpad
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+
+###############################################################################
+# System Preferences > Sharing                                                #
+###############################################################################
+ 
+# Set computer name
+sudo scutil --set ComputerName "Eve"
+sudo scutil --set HostName "Eve"
+sudo scutil --set LocalHostName "Eve"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Eve"
+ 
+###############################################################################
+# System Preferences > Users & Groups                                         #
+###############################################################################
+ 
+# Allow guests to log in to this computer
+sudo defaults write /Library/Preferences/com.apple.loginwindow 'GuestEnabled' -bool false
+ 
+### Login Options
+ 
+# Show the Sleep, Restart, and Shut Down buttons
+sudo defaults write /Library/Preferences/com.apple.loginwindow 'PowerOffDisabled' -bool true
+ 
+# Show Input menu in login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow 'showInputMenu' -bool false
+ 
+# Show password hints
+sudo defaults write /Library/Preferences/com.apple.loginwindow 'RetriesUntilHint' -int 0
+
