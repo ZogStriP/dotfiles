@@ -399,4 +399,13 @@ defaults write com.apple.calculator ViewDefaultsKey -string "Scientific"
  
 # Show Thousands Separator
 defaults write com.apple.calculator SeparatorsDefaultsKey -bool true
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
  
+for app in Finder Dock Dashboard SystemUIServer Calculator Safari; do
+  killall "$app" > /dev/null 2>&1
+done
+ 
+echo "Done. Note that some of these changes require a logout/restart to take effect."
