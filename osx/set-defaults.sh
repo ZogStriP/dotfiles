@@ -67,8 +67,9 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock autohide -bool true
  
 # Wipe all app icons from the Dock
-defaults write com.apple.dock persistent-apps -array
-defaults write com.apple.dock persistent-others -array
+# (this should be done only once, when you setup your Mac)
+#defaults write com.apple.dock persistent-apps -array
+#defaults write com.apple.dock persistent-others -array
  
 # [HIDDEN] Auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
