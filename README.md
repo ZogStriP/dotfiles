@@ -1,8 +1,14 @@
 # Régis's dotfiles
 
+*WORK IN PROGRESS*
+
+## Description
+
 ## Installation
 
-*TODO*
+## Features/Topics
+
+## Uninstall
 
 ## License
 
