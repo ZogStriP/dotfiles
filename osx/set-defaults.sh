@@ -293,4 +293,63 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
-
+### Finder
+ 
+# Show all filename extensions in Finder
+defaults write -g AppleShowAllExtensions -bool true
+ 
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+ 
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+ 
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+ 
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+ 
+# Use current directory as default search scope
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+ 
+# Show Path bar
+defaults write com.apple.finder ShowPathbar -bool true
+ 
+# Show Status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+ 
+# disable window animations and Get Info animations
+defaults write com.apple.finder AnimateInfoPanes -bool false
+defaults write com.apple.finder AnimateWindowZoom -bool false
+defaults write com.apple.finder DisableAllAnimations -bool true
+ 
+# Show icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+ 
+# allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+ 
+# Enable spring loading for directories
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+ 
+# Remove the spring loading delay for directories
+defaults write NSGlobalDomain com.apple.springing.delay -float 0
+ 
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+ 
+### DMG
+ 
+# Disable disk image verification
+defaults write com.apple.frameworks.diskimages skip-verify -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+ 
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
