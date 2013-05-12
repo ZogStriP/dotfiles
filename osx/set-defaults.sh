@@ -130,3 +130,56 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 # Computer sleep: Never
 sudo pmset -c sleep 0
 
+###############################################################################
+# System Preferences > Keyboard                                               #
+###############################################################################
+ 
+# Key Repeat
+defaults write -g KeyRepeat -int 0
+ 
+# Delay Until Repeat
+defaults write -g InitialKeyRepeat -int 10
+ 
+# [HIDDEN] Disable press-and-hold for keys in favor of key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+ 
+# Turn off keyboard illumination when computer is not used for 5 minutes
+defaults write com.apple.BezelServices kDimTime -int 300
+ 
+# [HIDDEN] Full keyboard access for all controls 
+# (so you can navigate through the UI using keyboard)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+ 
+###############################################################################
+# System Preferences > Mouse                                                  #
+###############################################################################
+ 
+# Scroll direction
+defaults write -g com.apple.swipescrolldirection -bool false
+ 
+# [HIDDEN] Smooth scrolling
+defaults write -g AppleScrollAnimationEnabled -bool false
+defaults write -g NSScrollAnimationEnabled -bool false
+ 
+# [HIDDEN] Rubberband scrolling (doesn't affect web views)
+defaults write -g NSScrollViewRubberbanding -bool false
+ 
+###############################################################################
+# System Preferences > Trackpad                                               #
+###############################################################################
+ 
+### Point & Click
+ 
+# Look up
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 0
+ 
+### More Gestures
+ 
+# Notification Center
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
+ 
+# App Expose
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
+ 
+# Launchpad
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
