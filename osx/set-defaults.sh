@@ -94,3 +94,24 @@ defaults write com.apple.dock expose-animation-duration -float 0
  
 # [HIDDEN] Disable dashboard
 defaults write com.apple.dashboard mcx-disabled -boolean true
+
+###############################################################################
+# System Preferences > Language & Text                                        #
+###############################################################################
+ 
+# Languages
+defaults write -g AppleLanguages -array "en"
+ 
+# Use symbol and text substitution
+defaults write -g NSUserReplacementItemsEnabled -bool false
+defaults write -g WebAutomaticTextReplacementEnabled -bool false
+ 
+# Correct spelling automatically
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+ 
+# Region
+defaults write -g AppleLocale -string "en_US@currency=EUR"
+defaults write -g AppleMeasurementUnits -string "Centimeters"
+defaults write -g AppleMetricUnits -bool true
+
+
