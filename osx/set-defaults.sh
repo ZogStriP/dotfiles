@@ -114,4 +114,19 @@ defaults write -g AppleLocale -string "en_US@currency=EUR"
 defaults write -g AppleMeasurementUnits -string "Centimeters"
 defaults write -g AppleMetricUnits -bool true
 
+###############################################################################
+# System Preferences > Notifications                                          #
+###############################################################################
+ 
+# Disable Notification Center and remove the menu bar icon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
+ 
+###############################################################################
+# System Preferences > Energy Saver                                           #
+###############################################################################
+ 
+#### Power Adapter
+ 
+# Computer sleep: Never
+sudo pmset -c sleep 0
 
