@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+
+#
+# This sets up OS X Mountain Lion as I like it. That is, ultra fast.
+#
+# Most of this file is stolen from the excellent: http://mths.be/osx
+#
+
 # Ask for the administrator password upfront
 sudo -v
  
@@ -8,20 +16,28 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # System Preferences > General                                                #
 ###############################################################################
  
-# Sidebar icon size (1 - Small, 2 - Medium, 3 - Large)
+# Sidebar icon size
+#   1: Small
+#   2: Medium
+#   3: Large
 defaults write -g NSTableViewDefaultSizeMode -int 1
  
-# Show scroll bars (`Automatic`, `WhenScrolling`, `Always`)
+# Show scroll bars
+#   - Automatic
+#   - WhenScrolling
+#   - Always
 defaults write -g AppleShowScrollBars -string "Always"
  
-# Click in the scroll bar to (false - jump to the next page, true - jump to the spot that's clicked)
+# Click in the scroll bar to
+#   false: jump to the next page
+#   true: jump to the spot that's clicked
 defaults write -g AppleScrollerPagingBehavior -bool true
  
 ###############################################################################
 # System Preferences > Desktop                                                #
 ###############################################################################
  
-# Translucent menu bar
+# Disable translucent menu bar
 defaults write -g AppleEnableMenuBarTransparency -bool false
  
 ###############################################################################
@@ -29,7 +45,6 @@ defaults write -g AppleEnableMenuBarTransparency -bool false
 ###############################################################################
  
 # Hot corners
-# Possible values:
 #  0: no-op
 #  2: Mission Control
 #  3: Show application windows
@@ -40,12 +55,15 @@ defaults write -g AppleEnableMenuBarTransparency -bool false
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
+
 # Top left screen corner > Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
+
 # Top right screen corner > Desktop
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0
+
 # Bottom left screen corner > Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
@@ -54,13 +72,16 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # System Preferences > Dock                                                   #
 ###############################################################################
  
-# Size
+# Size of the icons in the Dock
 defaults write com.apple.dock tilesize -int 32
  
-# Position on the screen (`left`, `bottom`, `right`)
+# Position of the Dock on the screen
+#   - left
+#   - bottom
+#   - right
 defaults write com.apple.dock orientation -string "left"
  
-# Animate opening applications from the Dock
+# Disable animation when opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
  
 # Automatically hide and show the Dock
@@ -71,14 +92,11 @@ defaults write com.apple.dock autohide -bool true
 #defaults write com.apple.dock persistent-apps -array
 #defaults write com.apple.dock persistent-others -array
  
-# [HIDDEN] Auto-hiding Dock delay
+# [HIDDEN] Remove auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
  
-# [HIDDEN] Animation when hiding/showing the Dock
+# [HIDDEN] Speed up animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
- 
-# [HIDDEN] Animation when opening an applicatin in the Dock
-defaults write com.apple.dock launchanim -bool false
  
 # [HIDDEN] Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -87,10 +105,10 @@ defaults write com.apple.dock showhidden -bool true
 # System Preferences > Mission Control                                        #
 ###############################################################################
  
-# Show Dashboard as a space
+# Do not show Dashboard as a space
 defaults write com.apple.dock dashboard-in-overlay -bool true
  
-# [HIDDEN] Mission control animation
+# [HIDDEN] Remove Mission control animation
 defaults write com.apple.dock expose-animation-duration -float 0
  
 # [HIDDEN] Disable dashboard
@@ -100,17 +118,17 @@ defaults write com.apple.dashboard mcx-disabled -boolean true
 # System Preferences > Language & Text                                        #
 ###############################################################################
  
-# Languages
+# Keep only "en" language
 defaults write -g AppleLanguages -array "en"
  
 # Use symbol and text substitution
 defaults write -g NSUserReplacementItemsEnabled -bool false
 defaults write -g WebAutomaticTextReplacementEnabled -bool false
  
-# Correct spelling automatically
+# Disable automatically spelling correction
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
  
-# Region
+# Regional settings (US + Metrics)
 defaults write -g AppleLocale -string "en_US@currency=EUR"
 defaults write -g AppleMeasurementUnits -string "Centimeters"
 defaults write -g AppleMetricUnits -bool true
@@ -135,10 +153,10 @@ sudo pmset -c sleep 0
 # System Preferences > Keyboard                                               #
 ###############################################################################
  
-# Key Repeat
+# Really fast key repeat
 defaults write -g KeyRepeat -int 0
  
-# Delay Until Repeat
+# Really fast delay until repeat
 defaults write -g InitialKeyRepeat -int 10
  
 # [HIDDEN] Disable press-and-hold for keys in favor of key repeat
@@ -155,14 +173,14 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # System Preferences > Mouse                                                  #
 ###############################################################################
  
-# Scroll direction
+# Disable natural scroll direction (ie. rollback to standard scroll direction)
 defaults write -g com.apple.swipescrolldirection -bool false
  
-# [HIDDEN] Smooth scrolling
+# [HIDDEN] Disable smooth scrolling
 defaults write -g AppleScrollAnimationEnabled -bool false
 defaults write -g NSScrollAnimationEnabled -bool false
  
-# [HIDDEN] Rubberband scrolling (doesn't affect web views)
+# [HIDDEN] Disable rubberband scrolling (doesn't affect web views)
 defaults write -g NSScrollViewRubberbanding -bool false
  
 ###############################################################################
@@ -171,18 +189,18 @@ defaults write -g NSScrollViewRubberbanding -bool false
  
 ### Point & Click
  
-# Look up
+# Disable Look up
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 0
  
 ### More Gestures
  
-# Notification Center
+# Disable Notification Center
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
  
-# App Expose
+# Enable App Expose
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
  
-# Launchpad
+# Disable Launchpad
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 ###############################################################################
@@ -199,18 +217,18 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 # System Preferences > Users & Groups                                         #
 ###############################################################################
  
-# Allow guests to log in to this computer
+# Disallow guests to log in to this computer
 sudo defaults write /Library/Preferences/com.apple.loginwindow 'GuestEnabled' -bool false
  
 ### Login Options
  
-# Show the Sleep, Restart, and Shut Down buttons
+# Hide the Sleep, Restart, and Shut Down buttons
 sudo defaults write /Library/Preferences/com.apple.loginwindow 'PowerOffDisabled' -bool true
  
-# Show Input menu in login window
+# Hide Input menu in login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow 'showInputMenu' -bool false
  
-# Show password hints
+# Hide password hints
 sudo defaults write /Library/Preferences/com.apple.loginwindow 'RetriesUntilHint' -int 0
 
 ###############################################################################
@@ -224,7 +242,7 @@ systemsetup -settimezone "Europe/Paris" > /dev/null
  
 ### Clock
  
-# Date format
+# Date format (with seconds)
 defaults write com.apple.menuextra.clock 'DateFormat' -string 'EEE MMM d   h:mm:ss a'
  
 ###############################################################################
@@ -241,7 +259,7 @@ sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ScheduleFreque
 # Disable window animations
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
  
-# Window resize speed for Cocoa applications
+# Speed up window resize animation for Cocoa applications
 defaults write -g NSWindowResizeTime -float .001
  
 # Expand save panel by default
@@ -252,9 +270,6 @@ defaults write -g PMPrintingExpandedStateForPrint -bool true
  
 # Disable "Reopen windows when logging back in"
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
- 
-# Disable auto-correct
-defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
  
 # Disable system-wide resume
 defaults write -g NSQuitAlwaysKeepsWindows -bool false
@@ -344,16 +359,14 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
  
-### DMG
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
  
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
- 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 ###############################################################################
 # Safari                                                                      #
@@ -395,7 +408,10 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Calculator                                                                  #
 ###############################################################################
  
-# View mode (`Basic`, `Scientific`, `Programmer`)
+# View mode
+#   - Basic
+#   - Scientific
+#   - Programmer
 defaults write com.apple.calculator ViewDefaultsKey -string "Scientific"
  
 # Show Thousands Separator
