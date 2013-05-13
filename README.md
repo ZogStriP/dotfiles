@@ -1,4 +1,4 @@
-# Régis's dotfiles
+# Régis' dotfiles
 
 *WORK IN PROGRESS*
 
