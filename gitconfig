@@ -5,5 +5,8 @@
 [color]
   ui = true
 
+[push]
+  default = simple
+
 [github]
   user = ZogStriP
