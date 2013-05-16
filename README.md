@@ -2,8 +2,6 @@
 
 *WORK IN PROGRESS*
 
-## Description
-
 ## License
 
 The MIT License
